@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamento via Pix</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container pix-page">
+    <h1 class="pix-title">Finalize seu Pedido</h1>
+    <p class="pix-subtitle">Escaneie o QR Code abaixo ou copie o código Pix para pagamento:</p>
+    
+    <div class="qr-container">
+      <img src="qrcodepix.png" alt="QR Code Pix" class="qrcode-img">
+    </div>
+
+    <p class="copiar-instrucao">Ou clique abaixo para copiar o código Pix:</p>
+    <input type="text" id="pixCode" value="00020101021126360014br.gov.bcb.pix0114+55119103670595204000053039865802BR5919EVANDRO L ANDREAZZA6009SAO PAULO62070503***63045394" readonly>
+    <button onclick="copyPix()" class="cta-button">📋 Copiar Código Pix</button>
+
+    <p class="info">Após o pagamento, enviaremos o produto para o endereço informado!</p>
+  </main>
+
+  <script>
+    function copyPix() {
+      var copyText = document.getElementById("pixCode");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Código Pix copiado com sucesso!");
+    }
+  </script>
+</body>
+</html>

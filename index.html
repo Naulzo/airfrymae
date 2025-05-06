@@ -2,72 +2,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promoção Dia das Mães - Air Fry</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Promoção Air Fry Dia das Mães</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      text-align: center;
+      background: #fff8f0;
+      color: #333;
     }
     .container {
-      max-width: 600px;
+      max-width: 720px;
       margin: auto;
-      background: #fff;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    img {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 15px;
+      text-align: center;
     }
     h1 {
       color: #d10000;
-      font-size: 28px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
     p {
       font-size: 18px;
-      color: #333;
+      margin-bottom: 10px;
     }
     .price {
-      font-size: 26px;
+      font-size: 30px;
       color: green;
-      margin: 10px 0;
-      font-weight: bold;
+      font-weight: 700;
+      margin: 20px 0;
     }
-    .pix-section {
-      margin-top: 20px;
+    img.product {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
     }
-    .pix-section img {
-      width: 300px;
+    .pix {
+      margin-top: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
     }
-    .copy-code {
-      background: #eee;
-      padding: 10px;
+    .pix img {
+      width: 260px;
+      margin-bottom: 10px;
+    }
+    button.copy {
+      background: #d10000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
       margin-top: 10px;
+    }
+    button.copy:hover {
+      background: #b00000;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
       font-size: 14px;
-      word-break: break-all;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>PROMOÇÃO DIA DAS MÃES</h1>
+    <h1>🔥 Promoção Especial Dia das Mães</h1>
     <p>Air Fryer Philco Gourmet Black</p>
-    <img src="airfry1.jpeg" alt="Air Fryer">
-    <img src="airfry2.jpeg" alt="Air Fryer">
-    <img src="airfry3.jpeg" alt="Air Fryer">
+    <img class="product" src="airfry1.jpeg" alt="Air Fryer">
+    <img class="product" src="airfry2.jpeg" alt="Air Fryer">
+    <img class="product" src="airfry3.jpeg" alt="Air Fryer">
     <p class="price">R$ 99,99</p>
-    <div class="pix-section">
-      <h2>Pague via Pix</h2>
+
+    <div class="pix">
+      <h2>Pagamento via Pix</h2>
       <img src="qrcode_pix_airfry.png" alt="QR Code Pix">
-      <p>Chave Pix: (11)1036-7059</p>
-      <p>Mensagem: AIR FRY DIA DAS MÃE</p>
+      <p>Chave Pix: <b id="chave">(11)1036-7059</b></p>
+      <button class="copy" onclick="copiarPix()">Copiar chave Pix</button>
+      <p id="confirmacao" style="color: green; margin-top: 10px;"></p>
+    </div>
+
+    <div class="footer">
+      © 2025 - Site Oficial - Oferta válida enquanto durar o estoque.
     </div>
   </div>
+
+  <script>
+    function copiarPix() {
+      const chave = document.getElementById('chave').textContent;
+      navigator.clipboard.writeText(chave).then(() => {
+        document.getElementById('confirmacao').textContent = '✅ Chave Pix copiada com sucesso!';
+      });
+    }
+  </script>
 </body>
 </html>

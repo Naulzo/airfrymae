@@ -2,54 +2,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Promoção Air Fry Dia das Mães</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
-    body {background: #fff8f0; color: #333;}
-    .container {max-width: 720px; margin: auto; padding: 20px; text-align: center;}
-    h1 {color: #d10000; font-size: 32px; margin-bottom: 10px;}
-    p {font-size: 18px; margin-bottom: 10px;}
-    .price {font-size: 30px; color: green; font-weight: 700; margin: 20px 0;}
-    img.product {width: 100%; border-radius: 12px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); margin-bottom: 15px;}
-    .pix {margin-top: 30px; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 5px 10px rgba(0,0,0,0.05);}
-    .pix img {width: 260px; margin-bottom: 10px;}
-    button.copy {background: #d10000; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 10px;}
-    button.copy:hover {background: #b00000;}
-    .footer {text-align: center; margin-top: 50px; font-size: 14px; color: #888;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airfryer Dia das Mães</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🔥 Promoção Especial Dia das Mães</h1>
-    <p>Air Fryer Philco Gourmet Black</p>
-    <img class="product" src="airfry1.jpeg" alt="Air Fryer">
-    <img class="product" src="airfry2.jpeg" alt="Air Fryer">
-    <img class="product" src="airfry3.jpeg" alt="Air Fryer">
-    <p class="price">R$ 99,99</p>
-    <div class="pix">
-      <h2>Pagamento via Pix</h2>
-      <img src="qrcode_pix_airfry.png" alt="QR Code Pix">
-      <p>Chave Pix: <b id="chave">143.948.326-40</b></p>
-      <button class="copy" onclick="copiarPix()">Copiar chave Pix</button>
-      <p id="confirmacao" style="color: green; margin-top: 10px;"></p>
-    </div>
-    <div style="margin-top: 40px;">
-      <a href="checkout.html"><button class="copy" style="background-color:#007bff;">Já paguei — Informar endereço</button></a>
-    </div>
-    <div class="footer">
-      © 2025 - Site Oficial - Oferta válida enquanto durar o estoque.
-    </div>
-  </div>
-  <script>
-    function copiarPix() {
-      const chave = document.getElementById('chave').textContent;
-      navigator.clipboard.writeText(chave).then(() => {
-        document.getElementById('confirmacao').textContent = '✅ Chave Pix copiada com sucesso!';
-      });
-    }
-  </script>
+    <main class="container">
+        <h1>Airfryer em Promoção Especial!</h1>
+        
+    <img src="airfry1.jpeg" alt="Airfryer 1" class="product-img">
+    <img src="airfry2.jpeg" alt="Airfryer 2" class="product-img">
+    <img src="airfry3.jpeg" alt="Airfryer 3" class="product-img">
+    
+        <p class="price">De <del>R$ 399,90</del> por apenas <strong>R$ 219,90</strong></p>
+        <form action="pix.html" method="GET" class="address-form">
+            <h2>Endereço de Entrega</h2>
+            <input type="text" name="nome" placeholder="Nome completo" required>
+            <input type="text" name="endereco" placeholder="Endereço" required>
+            <input type="text" name="numero" placeholder="Número" required>
+            <input type="text" name="complemento" placeholder="Complemento (opcional)">
+            <input type="text" name="bairro" placeholder="Bairro" required>
+            <input type="text" name="cidade" placeholder="Cidade" required>
+            <input type="text" name="uf" placeholder="UF" required maxlength="2">
+            <input type="text" name="cep" placeholder="CEP" required pattern="\d{5}-?\d{3}">
+            <button type="submit">Ir para pagamento Pix</button>
+        </form>
+    </main>
 </body>
 </html>

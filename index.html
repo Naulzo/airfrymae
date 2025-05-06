@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airfryer Philco - Oferta Dia das Mães</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <img src="philco-logo.png" alt="Philco" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#detalhes">Detalhes</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1>Air Fryer Philco Redstone PFR15PI</h1>
+      <p class="sub">A Airfryer perfeita para sua cozinha! Alta performance, design elegante e praticidade no dia a dia.</p>
+      <div class="price-box">
+        <span class="old-price">De R$ 199,90</span>
+        <span class="new-price">Por R$ 99,99</span>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="image-card"><img src="airfry1.jpeg" alt="Airfryer vista frontal"></div>
+      <div class="image-card"><img src="airfry2.jpeg" alt="Airfryer aberta com cesto"></div>
+      <div class="image-card"><img src="airfry3.jpeg" alt="Airfryer com batatas fritas"></div>
+    </section>
+
+    <section class="form-section" id="detalhes">
+      <h2>Informe seu Endereço para Entrega</h2>
+      <form action="pix.html" method="GET">
+        <div class="form-group">
+          <input type="text" name="nome" placeholder="Nome completo" required />
+          <input type="text" name="endereco" placeholder="Rua / Avenida" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="numero" placeholder="Número" required />
+          <input type="text" name="complemento" placeholder="Complemento (opcional)" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="bairro" placeholder="Bairro" required />
+          <input type="text" name="cidade" placeholder="Cidade" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="uf" placeholder="UF" maxlength="2" required />
+          <input type="text" name="cep" placeholder="CEP" pattern="\d{5}-?\d{3}" required />
+        </div>
+        <button type="submit" class="cta-button">Comprar Agora</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="contato">
+      <p>📞 Suporte Philco: (11) 97442-6807</p>
+      <p>📧 philcosuporte@gmail.com</p>
+    </div>
+    <p class="rodape">© 2025 Philco Brasil. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
